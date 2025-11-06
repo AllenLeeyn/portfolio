@@ -253,20 +253,89 @@ h3 .tech-pill:hover {
   text-shadow: 0 0 8px rgba(0,0,0,0.7);
   pointer-events: none;
 }
-
-/* Mobile responsiveness */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 1024px) {
+    /* Stack container vertically */
     .container {
         flex-direction: column;
+        height: auto; /* let content define height */
+        overflow: visible;
+        gap: 2em;
         padding: 1em;
-        gap: 1.5em;
     }
 
-    .about, .projects {
-        flex: 1 1 100%;
+    /* About section */
+    .about {
+        width: 100%;
+        flex: none; /* remove fixed flex */
+        height: auto;
+        padding: 1.5em;
+        overflow: visible;
+        align-items: flex-start;
+        text-align: left;
     }
 
+    /* Projects section */
+    .projects {
+        width: 100%;
+        flex: none;
+        height: auto;
+        overflow: visible;
+        padding: 1.5em;
+        gap: 1em;
+    }
+
+    /* Skills pills wrap better on mobile */
     .skills-pills {
         justify-content: flex-start;
+        gap: 0.4em;
+    }
+
+    /* Tech pills in project headings stack if needed */
+    h3 .tech-pill {
+        display: inline-block;
+        margin-top: 0.3em;
+        margin-left: 0.3em;
+    }
+
+    /* Carousel and video preview adjustments */
+    .carousel, .video-preview {
+        max-width: 100%;
+        margin: 1em 0;
+    }
+
+    .carousel img, .video-preview img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Connect box full width */
+    .about pre.connect {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small screens (mobile phones) */
+@media (max-width: 600px) {
+    .about, .projects {
+        padding: 1em;
+    }
+
+    .skills-pills span {
+        font-size: 0.75rem;
+        padding: 0.4em 0.8em;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-controls {
+        font-size: 1.8rem;
+    }
+
+    .video-preview .play-button {
+        font-size: 2.5rem;
     }
 }
