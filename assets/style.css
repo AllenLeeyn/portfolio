@@ -1,0 +1,135 @@
+/* Reset and base styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ee0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Full-page container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+/* Left section: About */
+.about {
+    flex: 1 1 30%; /* fixed 30% width */
+    background-color: #333; /* dark gray */
+    color: #ee0; /* bright yellow */
+    padding: 2em;
+    box-sizing: border-box;
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* spacing between dots */
+}
+
+/* Right section: Projects */
+.projects {
+    flex: 1 1 70%; /* fixed 70% width */
+    background-color: #222; /* darker gray */
+    color: #0f0; /* bright green */
+    padding: 2em;
+    box-sizing: border-box;
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* spacing between dots */
+}
+
+/* Headings */
+h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+/* Left section headings color */
+.about h2, .about h3 {
+    color: #ee0;
+}
+
+/* Right section headings color */
+.projects h2, .projects h3 {
+    color: #0f0;
+}
+
+.profile-image-container {
+    margin-bottom: 1em;
+}
+
+.profile-image-container img {
+    width: 180px;
+    height: 180px;
+    border: 3px solid #ee0; /* bright yellow from your palette */
+}
+
+.about pre.connect {
+    white-space: pre-wrap;  /* wrap long lines */
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    color: #ee0;
+    background-color: #333;
+    padding: 1em;
+    border-radius: 8px;
+    margin-top: 1em;
+    font-size: 0.9rem; 
+}
+
+/* Links */
+a {
+    color: #ee0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #f80; /* orange highlight */
+}
+
+.skills {
+  margin-top: 2em;
+}
+
+.skills h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #ee0;  /* yellow accent */
+  margin-bottom: 0.5em;
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.skills-pills span {
+  background-color: #444; /* dark pill background */
+  color: #ee0;            /* yellow text */
+  padding: 0.5em 0.8em;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: default;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.skills-pills span:hover {
+  background-color: #ee0;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsiveness: stack sections under 768px */
+@media (max-width: 768px){
+    .container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .about, .projects {
+        flex: 1 1 100%;
+    }
+}
