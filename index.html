@@ -20,19 +20,19 @@ title: "Home"
     <div class="skills">
         <h2>Skills & Technologies</h2>
         <div class="skills-pills">
-            <span>#Python</span>
-            <span>#Go</span>
-            <span>#JavaScript</span>
-            <span>#Java</span>
-            <span>#Rust</span>
-            <span>#HTML</span>
-            <span>#CSS</span>
-            <span>#FrontEnd</span>
-            <span>#BackEnd</span>
-            <span>#WebApps</span>
-            <span>#GitHub</span>
-            <span>#SQL</span>
-            <span>#ProjectManagement</span>
+            <span>Python</span>
+            <span>Go</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+            <span>Rust</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>FrontEnd</span>
+            <span>BackEnd</span>
+            <span>WebApps</span>
+            <span>GitHub</span>
+            <span>SQL</span>
+            <span>ProjectManagement</span>
         </div>
     </div>
 
@@ -45,27 +45,11 @@ GitHub: <a href="https://github.com/AllenLeeyn" target="_blank">https://github.c
 
   <section class="projects">
     <h2>Projects</h2>
-
-    <div class="project">
-      <h3><a href="https://github.com/yourusername/project1">Project One</a></h3>
-      <p>A short description of what this project does and what technologies it uses.</p>
-    </div>
-
-    <div class="project">
-      <h3><a href="https://github.com/yourusername/project2">Project Two</a></h3>
-      <p>Another project showcasing your skills — maybe a web app, game, or data visualization.</p>
-    </div>
+    
+    {% include projects/rt.html %}
+    {% include projects/smart_road.html %}
+    {% include projects/gritlab_hackathon.html %}
   </section>
 </div>
 
-<script>
-  const username = "AllenLeeyn";
-  fetch(`https://api.github.com/users/${username}`)
-    .then(response => response.json())
-    .then(data => {
-      const img = document.getElementById('github-avatar');
-      img.src = data.avatar_url;
-      img.alt = `${username}'s GitHub Avatar`;
-    })
-    .catch(err => console.error('Error fetching GitHub profile:', err));
-</script>
+<script type="module" src="./assets/main.js"></script>

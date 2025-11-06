@@ -3,42 +3,58 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Courier New', Courier, monospace;
-    color: #ee0;
-    background-color: #333;
+    font-family: 'Inter', 'Courier New', monospace;
+    color: #f5c518; /* warm gold */
+    background-color: #1e1f29; /* dark blue-gray */
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 /* Full-page container */
 .container {
     display: flex;
-    flex-wrap: wrap;
-    min-height: 100vh;
+    box-sizing: border-box;
+
+    height: 100vh; /* full viewport */
+    overflow-y: hidden;
 }
 
 /* Left section: About */
 .about {
     flex: 1 1 30%; /* fixed 30% width */
-    background-color: #333; /* dark gray */
-    color: #ee0; /* bright yellow */
+    background-color: #1e1f29;
+    color: #f5c518;
     padding: 2em;
-    box-sizing: border-box;
-    background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 20px 20px; /* spacing between dots */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    transition: transform 0.3s;
+    
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about:hover {
+    transform: translateY(-5px);
 }
 
 /* Right section: Projects */
 .projects {
     flex: 1 1 70%; /* fixed 70% width */
-    background-color: #222; /* darker gray */
-    color: #0f0; /* bright green */
+    background-color: #161722;
+    color: #76ff03;
     padding: 2em;
-    box-sizing: border-box;
-    background-image: 
-        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 20px 20px; /* spacing between dots */
+    background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    height: auto; /* scroll normally */
+    overflow-y: auto;
 }
 
 /* Headings */
@@ -48,88 +64,209 @@ h2, h3 {
     margin-top: 0;
 }
 
-/* Left section headings color */
 .about h2, .about h3 {
-    color: #ee0;
+    color: #f5c518;
 }
 
-/* Right section headings color */
 .projects h2, .projects h3 {
-    color: #0f0;
+    color: #76ff03;
 }
 
+/* Profile image */
 .profile-image-container {
     margin-bottom: 1em;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .profile-image-container img {
-    width: 180px;
-    height: 180px;
-    border: 3px solid #ee0; /* bright yellow from your palette */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Connect box */
 .about pre.connect {
-    white-space: pre-wrap;  /* wrap long lines */
+    white-space: pre-wrap;
     word-wrap: break-word;
     font-family: 'Courier New', monospace;
-    color: #ee0;
-    background-color: #333;
+    color: #f5c518;
+    background-color: #272833;
     padding: 1em;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 1em;
-    font-size: 0.9rem; 
+    font-size: 0.85rem;
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* Links */
 a {
-    color: #ee0;
-    text-decoration: underline;
+    color: #f5c518;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
-    color: #f80; /* orange highlight */
+    color: #ffb74d;
 }
 
+/* Skills */
 .skills {
-  margin-top: 2em;
+    margin-top: 2em;
+    width: 100%;
 }
 
 .skills h2 {
-  font-family: 'Poppins', sans-serif;
-  color: #ee0;  /* yellow accent */
-  margin-bottom: 0.5em;
+    font-family: 'Poppins', sans-serif;
+    color: #f5c518;
+    margin-bottom: 0.8em;
 }
 
 .skills-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: center;
 }
 
 .skills-pills span {
-  background-color: #444; /* dark pill background */
-  color: #ee0;            /* yellow text */
-  padding: 0.5em 0.8em;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  cursor: default;
-  transition: transform 0.2s, background-color 0.2s;
+    background-color: #2c2f3a;
+    color: #f5c518;
+    padding: 0.6em 1em;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    cursor: default;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .skills-pills span:hover {
-  background-color: #ee0;
-  color: #333;
-  transform: translateY(-2px);
+    background-color: #f5c518;
+    color: #1e1f29;
+    transform: translateY(-3px);
 }
 
-/* Mobile responsiveness: stack sections under 768px */
-@media (max-width: 768px){
+/* Project cards */
+.project {
+    background-color: rgba(39, 40, 51, 0.4); 
+    padding: 1.5em;
+}
+
+.project h3 a {
+    color: #76ff03;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project h3 a:hover {
+    color: #a0ff5a;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.carousel-controls span {
+  padding: 0.2em 0.5em;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.carousel-controls span:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+h3 .tech-pill {
+    display: inline-block;
+    background-color: #2c2f3a;
+    color: #f5c518;
+    padding: 0.3em 0.7em;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    cursor: default;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+h3 .tech-pill:hover {
+    background-color: #f5c518;
+    color: #1e1f29;
+    transform: translateY(-2px);
+}
+
+.project-image {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.video-preview {
+  position: relative;
+  display: inline-block;
+  margin-top: 1em;
+  max-width: 100%;
+}
+
+.video-preview img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.video-preview .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #f5c518;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
     .container {
         flex-direction: column;
-        min-height: auto;
+        padding: 1em;
+        gap: 1.5em;
     }
 
     .about, .projects {
         flex: 1 1 100%;
+    }
+
+    .skills-pills {
+        justify-content: flex-start;
     }
 }

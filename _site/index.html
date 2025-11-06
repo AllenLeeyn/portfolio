@@ -27,19 +27,19 @@
     <div class="skills">
         <h2>Skills & Technologies</h2>
         <div class="skills-pills">
-            <span>#Python</span>
-            <span>#Go</span>
-            <span>#JavaScript</span>
-            <span>#Java</span>
-            <span>#Rust</span>
-            <span>#HTML</span>
-            <span>#CSS</span>
-            <span>#FrontEnd</span>
-            <span>#BackEnd</span>
-            <span>#WebApps</span>
-            <span>#GitHub</span>
-            <span>#SQL</span>
-            <span>#ProjectManagement</span>
+            <span>Python</span>
+            <span>Go</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+            <span>Rust</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>FrontEnd</span>
+            <span>BackEnd</span>
+            <span>WebApps</span>
+            <span>GitHub</span>
+            <span>SQL</span>
+            <span>ProjectManagement</span>
         </div>
     </div>
 
@@ -52,30 +52,125 @@ GitHub: <a href="https://github.com/AllenLeeyn" target="_blank">https://github.c
 
   <section class="projects">
     <h2>Projects</h2>
-
+    
+    
     <div class="project">
-      <h3><a href="https://github.com/yourusername/project1">Project One</a></h3>
-      <p>A short description of what this project does and what technologies it uses.</p>
+      <h3>
+        <a href="https://github.com/AllenLeeyn/rt">
+          𝗪𝗮𝗹𝗸𝗶𝗻𝗴 𝗧𝗼𝘄𝗮𝗿𝗱 𝘁𝗵𝗲 𝗟𝗶𝗴𝗵𝘁 — 𝗔 𝗥𝗮𝘆 𝗧𝗿𝗮𝗰𝗶𝗻𝗴 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 
+        </a>
+        <span class="tech-pill">Rust</span>
+      </h3>
+      
+      <p>
+        This project generates images by simulating how light rays interact with 3D objects before reaching the camera. 
+        Using mathematical models, the program traces light as it bounces off or passes through objects, accumulating color along the way. 
+        This technique is called <strong>ray tracing</strong>, and it aims to mimic how light behaves in the real world.
+      </p>
+      
+      <p>It supports basic shapes such as spheres, cubes, planes, and cylinders, with materials that control how light behaves:</p>
+      
+      <ul>
+        <li><strong>Diffuse</strong> — scatters light in many directions</li>
+        <li><strong>Reflectivity</strong> — reflects light like a mirror</li>
+        <li><strong>Transparency</strong> — allows light to pass through</li>
+        <li><strong>Index of Refraction</strong> — bends light depending on material</li>
+        <li><strong>Emissive</strong> — emits light from the object itself</li>
+      </ul>
+
+      <div class="carousel">
+        <img class="carousel-item" src="./assets/image/rt_01.png" alt="Ray Tracing screenshot">
+        <img class="carousel-item" src="./assets/image/rt_02.png" alt="Ray Tracing screenshot" style="display:none;">
+        <img class="carousel-item" src="./assets/image/rt_03.png" alt="Ray Tracing screenshot" style="display:none;">
+        <div class="carousel-controls">
+          <span class="prev">&#8592;</span>
+          <span class="next">&#8594;</span>
+        </div>
+      </div>
     </div>
 
+    
     <div class="project">
-      <h3><a href="https://github.com/yourusername/project2">Project Two</a></h3>
-      <p>Another project showcasing your skills — maybe a web app, game, or data visualization.</p>
+      <h3>
+        <a href="https://github.com/AllenLeeyn/smart_road">
+          smart_road
+        </a>
+        <span class="tech-pill">Rust</span>
+        <span class="tech-pill">SDL2</span>
+      </h3>
+      
+      <p>
+        Ever been stuck in traffic wondering what’s causing the jam?
+        I made better use of my time and simulated how we might get rid of it.
+        (Just kidding—I’m still waiting too.)
+      </p>
+
+      <p>
+        This Rust project simulates a smart intersection system designed to manage the flow of autonomous vehicles (AVs). 
+        The simulation uses a Crossing Manager that assigns time slots to approaching vehicles, 
+        coordinating their movements to safely and efficiently cross the intersection without collisions.
+      </p>
+
+      <p>
+        Instead of relying on traditional traffic signals, the Crossing Manager divides the intersection’s conflict area into collision zones.
+        Vehicles are given specific entry times into these zones, ensuring that no two vehicles occupy the same zone at the same time.
+        This models how future AV-dominated road systems could operate using precise timing and spatial awareness.
+      </p>
+
+      <p>
+        The project is implemented in Rust with real-time visualization using SDL2, providing an interactive view of the system’s behavior.
+      </p>
+      
+        <div class="project-image">
+            <img src="assets/image/smart_road.gif" alt="Smart Road Simulation" />
+        </div>
+
     </div>
+
+    
+    <div class="project">
+      <h3>
+        <a href="https://www.linkedin.com/posts/allen-leeyn_%C3%A5lands-idrott-faced-a-tough-problem-their-activity-7376511110902026240-aUT1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOxCNIBJf8MsW38m5X2NRUqtpoBjccmkI4">
+          Ålands Idrott x Consilia Data Analysis Challenge
+        </a>
+        <span class="tech-pill">Go</span>
+        <span class="tech-pill">SQL</span>
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">JavaScript</span>
+      </h3>
+      
+      <p>
+        Ålands Idrott faced a tough problem: 
+        their funding data is spread across two different systems, making data driven decisions a real headache.
+      </p>
+
+      <p>
+        During the first grit:lab hackathon, the Ålands Idrott x Consilia Data Analysis Challenge, 
+        our team — Ekaterina Abrakhova, Othmane Afilali and Allen Leeyn — spent four sleepless days designing a solution.
+        While I tackled the data reconciliation layer, Othmane crafted the UI and charts, 
+        and Ekaterina tested for functionality and seamless user experience. 
+      </p>
+        <p>We built a lightweight local web app that:</p>
+        <ul>
+            <li>Reconciles club data from two sources (with different schemas and IDs)</li>
+            <li>Processes the data into funding statistics for budgeting and auditability</li>
+            <li>Allows users to enter or change values for budget calculation</li>
+            <li>Visualizes distributions through clear dashboards</li>
+        </ul>
+
+        <div class="video-preview">
+            <a href="https://www.linkedin.com/posts/allen-leeyn_%C3%A5lands-idrott-faced-a-tough-problem-their-activity-7376511110902026240-aUT1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOxCNIBJf8MsW38m5X2NRUqtpoBjccmkI4" target="_blank">
+            <img src="assets/image/aalands_video_preview.png" alt="Ålands Idrott Video Preview">
+            <span class="play-button">&#9658;</span>
+            </a>
+        </div>
+    </div>
+
   </section>
 </div>
 
-<script>
-  const username = "AllenLeeyn";
-  fetch(`https://api.github.com/users/${username}`)
-    .then(response => response.json())
-    .then(data => {
-      const img = document.getElementById('github-avatar');
-      img.src = data.avatar_url;
-      img.alt = `${username}'s GitHub Avatar`;
-    })
-    .catch(err => console.error('Error fetching GitHub profile:', err));
-</script>
+<script type="module" src="./assets/main.js"></script>
+
   </main>
 
 </body>
