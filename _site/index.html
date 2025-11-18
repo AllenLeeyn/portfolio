@@ -57,6 +57,59 @@ GitHub: <a href="https://github.com/AllenLeeyn" target="_blank">https://github.c
     
     <div class="project">
   <h3>
+    <a href="https://www.linkedin.com/posts/allen-leeyn_guidely-guiding-you-through-documents-you-activity-7396476331808628736-n8FJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOxCNIBJf8MsW38m5X2NRUqtpoBjccmkI4" target="_blank">
+      Guidely — Guiding You Through Documents You Never Want to Read
+    </a>
+    <span class="tech-pill">React</span>
+    <span class="tech-pill">FastAPI</span>
+    <span class="tech-pill">FAISS</span>
+    <span class="tech-pill">GenAI API</span>
+    <span class="tech-pill">SQLite</span>
+  </h3>
+
+  <p>
+    Guidely is a Retrieval-Augmented Generation (RAG) System designed to help teams quickly pull relevant knowledge from internal documents without wading through endless pages.
+    This RAG system uses the FAISS vector database for fast lookup of relevant information chunks and passes them to Google GenAI as context to generate quality responses backed by references.
+  </p>
+
+  <h4>Account Types</h4>
+  <ul>
+    <li><strong>Admin:</strong> Upload and manage knowledge base (Adding, editing, and indexing)</li>
+    <li><strong>User:</strong> Ask questions and receive accurate, reference-based answers</li>
+  </ul>
+
+  <h4>Development Journey</h4>
+  <p>
+This is my first time working with vector databases and LLM APIs. It was very fun and interesting. 
+The integration with FAISS and Google GenAI with Python was surprisingly smooth.
+I think I spend more time on setting up the Relational datavase to handle different user types and conversation histroy,  
+  </p>
+  <p>
+On the topic of chat history, I tried limiting token usage by including only questions and answers (no source context) of past exchanges. The inclusion of chat history does help improve some answer quality, but in some cases it reinforces a poor answer.
+Maybe it is the way I am handling history… what are your thoughts?
+  <p>
+For simiplicity, we load all FAISS indexes into memory on startup (No good as we hog the memory). This is acceptable for small dataset (what we are targetting). A better way of handling this is to use Approximate Nearest Neighbors (ANN) indexing.
+  </p>
+
+  <p>
+    I also added caching to return answers for frequently asked questions, which is great for speed but not ideal when answers get stale or are of poor quality. It’s a trade-off, but it helps with keeping token used low.
+  </p>
+
+  <p>
+    Lastly, I tried optimizing the instructions to the LLM for the targeted 3 seconds per response.
+In the end, switching from gemini-2.5-flash to gemini-2.5-flash-lite greatly reduce the latency from 2-8 seconds to 1-3 seconds but sacrifices quality and accuracy (generally shorter response and not all relevant chunks is used).
+  </p>
+
+        <div class="video-preview">
+            <a href="https://www.linkedin.com/posts/allen-leeyn_guidely-guiding-you-through-documents-you-activity-7396476331808628736-n8FJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEOxCNIBJf8MsW38m5X2NRUqtpoBjccmkI4" target="_blank">
+            <img src="assets/image/guidely.png" alt="Guidely">
+            <span class="play-button">&#9658;</span>
+            </a>
+        </div>
+</div>
+
+    <div class="project">
+  <h3>
     <a href="https://bomberman-dom-4lnj.onrender.com/" target="_blank">
       DOMBERS — Browser-Based Multiplayer Bomberman Clone
     </a>
@@ -221,9 +274,9 @@ GitHub: <a href="https://github.com/AllenLeeyn" target="_blank">https://github.c
     Check it out: <a href="https://allenleeyn.github.io/clonernews/" target="_blank">https://allenleeyn.github.io/clonernews/</a>
   </p>
 
-<div class="project-image">
-    <img src="assets/image/clonernews.png" alt="clonernews frontpage" />
-</div>
+    <div class="project-image">
+        <img src="assets/image/clonernews.png" alt="clonernews frontpage" />
+    </div>
 </div>
 
   </section>
